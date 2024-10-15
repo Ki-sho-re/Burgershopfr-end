@@ -1,0 +1,29 @@
+document.getElementById('orderButton').addEventListener('click', function() {
+    alert('Redirecting to the order page!');
+});
+document.getElementById("cta-button").addEventListener('click', function() {
+    const aboutSection = document.getElementById('about');  
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+});
+ 
+ 
+document.querySelectorAll('.footer-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();  
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Social media links click event
+document.querySelectorAll('.footer-social a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default behavior
+        const platform = this.getAttribute('aria-label');
+        alert(`You clicked on the ${platform} link!`);  
+    });
+});
+
